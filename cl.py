@@ -14,7 +14,7 @@ def echo_client(server_addr):
 	while True:
 		message = sys.stdin.readline()
 		if message == '\n': # enter를 칠 때
-			ser.write("in".encode('utf-8')) #아두이노에게 광센서의 센서 값 입력 받기 위해서 in을 보냄
+			ser.write("in".encode('utf-8')) # 아두이노에게 광센서의 센서 값 입력 받기 위해서 in을 보냄
 			light = int(ser.readline())     # 값 받아오기
 			s_msg = "type:load\r\ntime:%s\r\ncds:%s\r\n" %(datetime.datetime.now(), light) #시간과 센서 값 첨부해서 서버로 문자열 보냄
 			sock.send(s_msg.encode('utf-8'))
