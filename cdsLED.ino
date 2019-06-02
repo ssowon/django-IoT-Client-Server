@@ -6,7 +6,7 @@ int sensorMin = 1023;
 int sensorMax = 0;
 
 void setup() {
-    Serial.port(9600);
+    Serial.begin(9600);
     pinMode(ledPin, OUTPUT);
     digitalWrite(ledPin, HIGH);
 
