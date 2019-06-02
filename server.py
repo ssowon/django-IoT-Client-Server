@@ -19,7 +19,7 @@ def echo_server(my_port):
 				print('server received', data.decode())
 				r_msg=data.decode()
 				s=r_msg.split()
-				db = sqlite3.connect('light.db')
+				db = sqlite3.connect('light.sqlite3')
 				cursor = db.cursor()
 
 				# data type load
