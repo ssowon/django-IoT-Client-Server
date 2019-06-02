@@ -25,8 +25,8 @@ def echo_server(my_port):
 				# data type load
 				if(s[0][5:]=='load'):
 					datein=(s[1][5:]+" "+s[2])[:19]
-					tmp = s[3][-5:]
-					cursor.execute("INSERT INTO LIGHT VALUES(?, ?);",(datein, tmp))
+					cds = s[3][:]
+					cursor.execute("INSERT INTO LIGHT VALUES(?, ?);",(datein, cds))
 					db.commit()
 					msg="server received by client\n"
 					conn.send(msg.encode())
@@ -56,4 +56,4 @@ def echo_server(my_port):
 
 
 if __name__ == '__main__':
-	echo_server(30303) 
+	echo_server(30303)
