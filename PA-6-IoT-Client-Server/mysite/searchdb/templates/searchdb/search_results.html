@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<ul>
+  {% for Sensorvalue in object_list %}
+    <li>
+      {{ Sensorvalue.datein }}, {{ Sensorvalue.cds }}
+    </li>
+  {% endfor %}
+</ul>
